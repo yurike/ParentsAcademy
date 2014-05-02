@@ -7,13 +7,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.widget.TextView;
+import com.deitykids.pacademy.Main;
 import com.deitykids.pacademy.R;
 
 /**
  *
  * Created by Yuri K on 02.05.2014.
  */
-public class WebViewFragment extends Fragment
+public class WebinarWebViewFragment extends Fragment
 {
     private WebView webView;
 
@@ -22,10 +23,12 @@ public class WebViewFragment extends Fragment
     {
         View contentView = inflater.inflate(R.layout.webview, container, false);
         webView = ((WebView) contentView.findViewById(R.id.webView));
-        webView.loadUrl("http://danilova.ru/trening/sam/");
-        Bundle bundle = getArguments();
-//        String label = bundle.getString("label");
-//        labelText.setText(label);
+        final int years = Main.getInstance().getYears();
+        if (years < 2) {
+            webView.loadUrl("http://danilova.ru/trening/sam/");
+        } else {
+            webView.loadUrl("http://danilova.ru/shkola_dvuhletki/");
+        }
         return contentView;
     }
 }

@@ -25,8 +25,8 @@ public class DashBoardFragment extends Fragment
 
 //        Bundle bundle = getArguments();
 //      String label = bundle.getString("label");
-        final int days = Main.getInstance().getDays();
-        String label = "лет " + days/365 + "";
+        final int years = Main.getInstance().getYears();
+        String label = "лет " + years;
         labelText.setText(label);
         return contentView;
     }

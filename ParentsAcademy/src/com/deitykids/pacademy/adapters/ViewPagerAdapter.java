@@ -6,7 +6,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import com.deitykids.pacademy.fragments.DashBoardFragment;
 import com.deitykids.pacademy.fragments.SampleFragment;
-import com.deitykids.pacademy.fragments.WebViewFragment;
+import com.deitykids.pacademy.fragments.WebinarWebViewFragment;
 
 /**
  *  Created by Yuri K on 02.05.2014.
@@ -33,7 +33,7 @@ public class ViewPagerAdapter extends FragmentPagerAdapter
                 fragment = new DashBoardFragment();
                 break;
             case 1 :
-                fragment = new WebViewFragment();
+                fragment = new WebinarWebViewFragment();
                 break;
             default:
                 fragment = new SampleFragment()  ;

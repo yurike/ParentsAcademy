@@ -10,7 +10,7 @@ bin-debug/
 bin-release/
 target/
 out/
-*gen/*
+*gen/**
 
 # Project property files
 .actionScriptProperties

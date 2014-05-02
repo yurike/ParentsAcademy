@@ -40,6 +40,12 @@ public class Main extends Application
         return getPrefs().getInt("Days", 0);
     }
 
+    public int getYears ()
+    {
+        int years = getPrefs().getInt("Days", 0) / 365;
+        return  years;
+    }
+
 
 
 
