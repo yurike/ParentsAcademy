@@ -3,6 +3,7 @@
 
 	<string-array name="locations">
 		<item>Лента</item>
+		<item>Вебинары</item>
 		<item>Форум</item>
 		<item>Календарь</item>
 		<item>Дневник</item>
