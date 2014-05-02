@@ -10,10 +10,6 @@ import android.widget.DatePicker;
 import org.joda.time.Days;
 import org.joda.time.LocalDate;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.concurrent.TimeUnit;
-
 /**
  * Created by Yuri K on 02.05.2014.
  */
@@ -24,6 +20,7 @@ public class IntroActivity extends Activity
         setContentView(R.layout.intro);
 
         final DatePicker datePicker = (DatePicker) findViewById(R.id.datePicker);
+        datePicker.setCalendarViewShown(false);
 
         Button btnEnter = (Button) findViewById(R.id.button);
         btnEnter.setOnClickListener(new View.OnClickListener() {
@@ -40,12 +37,6 @@ public class IntroActivity extends Activity
 
                 Log.d("PW", "year " + datePicker.getYear());
                 Log.d("PW", "diffInDays " + nm_days.getDays());
-
-//                SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
-//                String formatedDate = sdf.format(date);
-//                Log.d("PW", "" + formatedDate);
-//
-//                intent.putExtra("Date", date);
 
                 startActivity(intent);
             }
