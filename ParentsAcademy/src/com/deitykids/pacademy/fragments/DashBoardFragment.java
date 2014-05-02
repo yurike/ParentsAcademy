@@ -8,9 +8,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import com.deitykids.pacademy.Main;
 import com.deitykids.pacademy.R;
-import com.parse.Parse;
-import com.parse.ParseObject;
-import com.parse.ParseQuery;
 
 /**
  *
@@ -23,7 +20,8 @@ public class DashBoardFragment extends Fragment
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
-        View contentView = inflater.inflate(R.layout.fragment_sample, container, false);
+//        View contentView = inflater.inflate(R.layout.fragment_sample, container, false);
+        View contentView = inflater.inflate(R.layout.ribbon, container, false);
         labelText = ((TextView) contentView.findViewById(R.id.label_text));
 
         Parse.initialize(this.getActivity(), "WJMwgRglIhf4V5RkaN6RZAEDRcFPCGahjhC1g4UK", "YVkFR3KLHPGG2ltB2gYo3UnCXcZkdDq4Jz76zC2h");
