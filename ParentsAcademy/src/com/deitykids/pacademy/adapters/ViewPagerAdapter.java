@@ -6,6 +6,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import com.deitykids.pacademy.fragments.DashBoardFragment;
 import com.deitykids.pacademy.fragments.SampleFragment;
+import com.deitykids.pacademy.fragments.WebViewFragment;
 
 /**
  *  Created by Yuri K on 02.05.2014.
@@ -26,7 +27,17 @@ public class ViewPagerAdapter extends FragmentPagerAdapter
 
     public Fragment getItem(int position)
     {
-        Fragment fragment = (position == 0) ? new DashBoardFragment() : new SampleFragment()  ;
+        Fragment fragment;// = (position == 0) ? new DashBoardFragment() : new SampleFragment()  ;
+        switch (position) {
+            case 0 :
+                fragment = new DashBoardFragment();
+                break;
+            case 1 :
+                fragment = new WebViewFragment();
+                break;
+            default:
+                fragment = new SampleFragment()  ;
+        }
         Bundle bundle = new Bundle();
         bundle.putString("label", locations[position]);
         fragment.setArguments(bundle);
