@@ -28,16 +28,16 @@ public class Main extends Application
     }
 
 
-    public void writeDays (Long value)
+    public void writeDays (int value)
     {
         SharedPreferences.Editor editor = getPrefs().edit();
-        editor.putLong("Days", value);
+        editor.putInt("Days", value);
         editor.commit();
     }
 
-    public Long getDays ()
+    public int getDays ()
     {
-        return getPrefs().getLong("Days", 1);
+        return getPrefs().getInt("Days", 0);
     }
 
 
