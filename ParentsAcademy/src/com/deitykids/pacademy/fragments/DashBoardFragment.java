@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import com.deitykids.pacademy.Main;
 import com.deitykids.pacademy.R;
 
 /**
@@ -22,8 +23,10 @@ public class DashBoardFragment extends Fragment
         View contentView = inflater.inflate(R.layout.fragment_sample, container, false);
         labelText = ((TextView) contentView.findViewById(R.id.label_text));
 
-        Bundle bundle = getArguments();
-        String label = bundle.getString("label");
+//        Bundle bundle = getArguments();
+//      String label = bundle.getString("label");
+        final Long days = Main.getInstance().getDays();
+        String label = days.toString();
         labelText.setText(label);
         return contentView;
     }

@@ -4,6 +4,9 @@ import android.app.Application;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
+import java.util.Date;
+import java.util.concurrent.TimeUnit;
+
 /**
  *  Created by Yuri K on 02.05.2014.
  */
@@ -25,11 +28,16 @@ public class Main extends Application
     }
 
 
-    public void writeAge (String key, Long value)
+    public void writeDays (Long value)
     {
         SharedPreferences.Editor editor = getPrefs().edit();
-        editor.putLong(key, value);
+        editor.putLong("Days", value);
         editor.commit();
+    }
+
+    public Long getDays ()
+    {
+        return getPrefs().getLong("Days", 1);
     }
 
 
@@ -41,5 +49,18 @@ public class Main extends Application
             prefs_ = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 
         return prefs_;
+    }
+
+
+    /**
+     * Get a diff between two dates
+     * @param date1 the oldest date
+     * @param date2 the newest date
+     * @param timeUnit the unit in which you want the diff
+     * @return the diff value, in the provided unit
+     */
+    public static long getDateDiff(Date date1, Date date2, TimeUnit timeUnit) {
+        long diffInMillies = date2.getTime() - date1.getTime();
+        return timeUnit.convert(diffInMillies,TimeUnit.MILLISECONDS);
     }
 }
