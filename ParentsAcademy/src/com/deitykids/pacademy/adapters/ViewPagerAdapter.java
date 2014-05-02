@@ -4,10 +4,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import com.deitykids.pacademy.fragments.DashBoardFragment;
-import com.deitykids.pacademy.fragments.ForumWebViewFragment;
-import com.deitykids.pacademy.fragments.SampleFragment;
-import com.deitykids.pacademy.fragments.WebinarWebViewFragment;
+import com.deitykids.pacademy.fragments.*;
 
 /**
  *  Created by Yuri K on 02.05.2014.
@@ -38,6 +35,9 @@ public class ViewPagerAdapter extends FragmentPagerAdapter
                 break;
             case 2 :
                 fragment = new ForumWebViewFragment();
+                break;
+            case 5 :
+                fragment = new QuestionFragment();
                 break;
             default:
                 fragment = new SampleFragment()  ;
