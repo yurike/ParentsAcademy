@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import com.deitykids.pacademy.fragments.DashBoardFragment;
 import com.deitykids.pacademy.fragments.SampleFragment;
 
 /**
@@ -25,7 +26,7 @@ public class ViewPagerAdapter extends FragmentPagerAdapter
 
     public Fragment getItem(int position)
     {
-        Fragment fragment = (position == 0) ? new SampleFragment() : new SampleFragment()  ;
+        Fragment fragment = (position == 0) ? new DashBoardFragment() : new SampleFragment()  ;
         Bundle bundle = new Bundle();
         bundle.putString("label", locations[position]);
         fragment.setArguments(bundle);
