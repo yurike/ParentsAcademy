@@ -8,6 +8,9 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import com.deitykids.pacademy.Main;
 import com.deitykids.pacademy.R;
+import com.parse.Parse;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
 
 /**
  *
@@ -23,8 +26,18 @@ public class DashBoardFragment extends Fragment
         View contentView = inflater.inflate(R.layout.fragment_sample, container, false);
         labelText = ((TextView) contentView.findViewById(R.id.label_text));
 
-        String label = "лет " + Main.getInstance().getYears() + "";
+        Parse.initialize(this.getActivity(), "WJMwgRglIhf4V5RkaN6RZAEDRcFPCGahjhC1g4UK", "YVkFR3KLHPGG2ltB2gYo3UnCXcZkdDq4Jz76zC2h");
+        getAdminFeed();
+
+        String label = "лет " + Main.getInstance().getYears();
         labelText.setText(label);
         return contentView;
+    }
+
+    private void getAdminFeed()
+    {
+        ParseQuery<ParseObject> query = ParseQuery.getQuery("AdminFeed");
+
+        // TODO implement
     }
 }
