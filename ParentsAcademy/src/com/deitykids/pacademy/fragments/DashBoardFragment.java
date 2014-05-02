@@ -23,10 +23,7 @@ public class DashBoardFragment extends Fragment
         View contentView = inflater.inflate(R.layout.fragment_sample, container, false);
         labelText = ((TextView) contentView.findViewById(R.id.label_text));
 
-//        Bundle bundle = getArguments();
-//      String label = bundle.getString("label");
-        final int years = Main.getInstance().getYears();
-        String label = "лет " + years;
+        String label = "лет " + Main.getInstance().getYears() + "";
         labelText.setText(label);
         return contentView;
     }
