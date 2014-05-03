@@ -42,12 +42,6 @@ public class DashBoardFragment extends Fragment {
 //            final ArrayList<String> alist = new ArrayList<String>();
 //            Collections.addAll(alist, values);
 
-//            values = new String[] { "Android", "iPhone", "WindowsMobile",
-//                    "Blackberry", "WebOS", "Ubuntu", "Windows7", "Max OS X",
-//                    "Linux", "OS/2", "Ubuntu", "Windows7", "Max OS X", "Linux",
-//                    "OS/2", "Ubuntu", "Windows7", "Max OS X", "Linux", "OS/2",
-//                    "Android", "iPhone", "WindowsMobile" };
-
             final ArrayList<String> list = new ArrayList<String>();
             for (int i = 0; i < values.length; ++i) {
                 list.add(values[i]);
@@ -93,7 +87,7 @@ public class DashBoardFragment extends Fragment {
         ParseQuery<ParseObject> query = ParseQuery.getQuery("AdminFeed");
         query.setCachePolicy(ParseQuery.CachePolicy.NETWORK_ELSE_CACHE);
 
-        int age = Main.getInstance().getYears();
+        final int age = Main.getInstance().getYears();
         query.whereGreaterThan("ageFrom", age-1);
 //        query.whereEqualTo("age", age+1);
 
@@ -103,7 +97,7 @@ public class DashBoardFragment extends Fragment {
                 if (e == null) {
                     String[] pApps = new String[appList.size()];
                     int i = 0;
-                    pApps[i++] = "1st line"; // hack!
+                    pApps[i++] = "Малышу " + age + ((age == 1)? " год" :(age > 1 && age < 5)? " года." : " лет. ") + " Подборка:"; // hack!
                     for (ParseObject app : appList) {
 
                         try {
