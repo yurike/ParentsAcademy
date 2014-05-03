@@ -36,6 +36,9 @@ public class ViewPagerAdapter extends FragmentPagerAdapter
             case 2 :
                 fragment = new ForumWebViewFragment();
                 break;
+            case 3 :
+                fragment = new DiaryFragment();
+                break;
             case 4 :
                 fragment = new QuestionFragment();
                 break;
